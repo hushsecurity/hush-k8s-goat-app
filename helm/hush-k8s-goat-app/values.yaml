@@ -1,0 +1,41 @@
+# Hush K8s Goat App - Helm Values
+
+# Container image configuration
+image:
+  repository: public.ecr.aws/z0t8l6o4/hush-k8s-goat-app
+  tag: v0.1.0
+  pullPolicy: Always
+
+# Credentials (passed as Kubernetes Secret)
+credentials:
+  # HubSpot API key - hardcoded demo key
+  hubspotApiKey: "pat-na1-ffbb9f50-d96b-4abc-84f1-b986617be1b6"
+
+# Application configuration
+config:
+  # Interval between authentication attempts (seconds)
+  intervalSeconds: 30
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  logLevel: INFO
+
+# Deployment configuration
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 100m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+# Pod configuration
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
+# Service account
+serviceAccount:
+  create: true
+  name: ""
+  annotations: {}
