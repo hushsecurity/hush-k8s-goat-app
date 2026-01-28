@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hush-k8s-goat-app.fullname" . }}
+  labels:
+    {{- include "hush-k8s-goat-app.labels" . | nindent 4 }}
+data:
+  INTERVAL_SECONDS: {{ .Values.config.intervalSeconds | quote }}
+  LOG_LEVEL: {{ .Values.config.logLevel | quote }}

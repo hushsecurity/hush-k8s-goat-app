@@ -1,0 +1,14 @@
+apiVersion: v2
+name: hush-k8s-goat-app
+description: A demo app that generates authentication events for Hush NHI tracking validation
+type: application
+version: 0.1.0
+appVersion: "1.0.0"
+keywords:
+  - hush
+  - nhi
+  - demo
+  - authentication
+  - security
+maintainers:
+  - name: Hush Security
