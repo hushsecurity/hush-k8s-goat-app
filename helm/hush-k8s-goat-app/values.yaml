@@ -3,7 +3,7 @@
 # Container image configuration
 image:
   repository: public.ecr.aws/z0t8l6o4/hush-k8s-goat-app
-  tag: v0.1.0
+  tag: main
   pullPolicy: Always
 
 # Credentials (passed as Kubernetes Secret)
