@@ -30,7 +30,7 @@ helm install hush-goat oci://ghcr.io/hushsecurity/hush-k8s-goat-app
 | `config.intervalSeconds` | Seconds between auth attempts | `30` |
 | `config.logLevel` | Log level (DEBUG, INFO, WARNING, ERROR) | `INFO` |
 | `image.repository` | Container image repository | `public.ecr.aws/z0t8l6o4/hush-k8s-goat-app` |
-| `image.tag` | Container image tag | `v0.1.0` |
+| `image.tag` | Container image tag | `main` |
 
 ### Example: Custom interval
 
