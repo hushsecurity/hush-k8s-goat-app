@@ -5,6 +5,8 @@ on:
     branches:
       - main
       - "**-ci"
+    tags:
+      - "v*"
   pull_request:
   workflow_dispatch:
 
@@ -42,9 +44,9 @@ jobs:
         run: make submit
 
       - name: Login to GHCR
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: startsWith(github.ref, 'refs/tags/v')
         run: echo "${{ secrets.GITHUB_TOKEN }}" | helm registry login ghcr.io -u $ --password-stdin
 
       - name: Push Helm chart to GHCR
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        if: startsWith(github.ref, 'refs/tags/v')
         run: make publish
